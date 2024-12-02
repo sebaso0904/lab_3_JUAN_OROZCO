@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function realizarOperacion(num1,num2,op){
+            if(op==1){
+               let suma= num1+num2;    
+               return suma;
+            }
+            else if(op==2){
+               let resta= num1-num2;
+               return resta;
+            }
+            else if(op==3){
+                let multiplicacion= num1*num2;
+                return multiplicacion;
+            }
+            else if(op==4){
+                while(num2==0){
+                 num2=parseFloat(prompt("No se puede dividir entre 0, elige otro numero"))
+                }
+                let division=num1/num2;
+                return division;
+            }
+        }
+        controller='s'
+        while(controller.toLowerCase()=='s'){
+        alert("menu de la calculardora\n\n"+"1.suma\n"+"2.resta\n"+"3.multiplicación\n"+"4.division");
+        let op = prompt("Digite la operacion que va a implementar");
+        while(op>4 || op<1){
+            op=prompt("numero de operacion erronea por favor digite otra operacion");
+        }
+        let num1 =parseFloat(prompt("Digite el primer numero"));
+        let num2 = parseFloat(prompt("Digite el segundo numero"));
+        if(op==1){
+            let suma = realizarOperacion(num1,num2,op);
+            alert("El resultado de la suma es "+suma);
+        }else if(op==2){
+            let resta = realizarOperacion(num1,num2,op);
+            alert("El resultado de la resta es "+resta);
+        }else if(op==3){
+            let multiplicacion= realizarOperacion(num1,num2,op);
+            alert("El resultado de la multiplicacion es "+multiplicacion);
+        }else if(op==4){
+            let division= realizarOperacion(num1,num2,op);
+            alert("El resultado de la division es "+division);
+        }
+        controller=prompt("digite la letra 's' para volver hacer otra operacion, digite cualquier letra para salir");
+    }
+    </script>
+</head>
+</html>
